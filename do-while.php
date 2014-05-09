@@ -9,13 +9,13 @@
 
 //initialize $number
 
-$number = 100;
+$number = 2;
 
 do 
 {
 	echo $number . PHP_EOL;
-	$number -=5;
+	$number =$number*$number;
 }
-while ($number >= -10) 
+while ($number <= 1E6) 
 
 ?>
