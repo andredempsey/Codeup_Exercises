@@ -12,7 +12,7 @@ if ($a < $b)
 }
 else
 {
-        echo "$a is not less than $b\n";
+    echo "$a is not less than $b\n";
 }
 
 if ($b > $a) 
