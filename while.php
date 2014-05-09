@@ -7,13 +7,12 @@
 //Name:  Andre Dempsey
 //Codeup Baddies
 
-
 //initialize $test
-
 $test = 5;
+
 while ($test <= 15) 
 {
-    echo "{$test}\n";
+    echo $test . PHP_EOL;
     $test++;
 }
 
