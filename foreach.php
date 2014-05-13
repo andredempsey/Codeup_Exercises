@@ -10,47 +10,50 @@
 
 //read in array
 $things = array('Sgt. Pepper', "11", null, array(1,2,3), 3.14, "12 + 7", false, (string) 11);
-//iterate through each value and output types {integer, float, boolean, array, null, or string}
-
+//iterate through each value and output only those values with a type of scalar
 foreach ($things as  $thing) 
 {
 
-if (is_integer($thing))  //check for integer value
+if (is_scalar($thing))  //first check if it is a scalar
 {
-	echo "$thing is of type integer\n";
-}
-elseif (is_float($thing))  //check for float value
-{
-	echo "$thing is of type float\n";
-}
-elseif (is_bool($thing))  //check for boolean value
-{
-	if ($thing) 
+	
+	if (is_integer($thing))  //check for integer value
 	{
-		echo "true is of type boolean\n";
+		echo "$thing is of type integer\n";
 	}
-	else
+	elseif (is_float($thing))  //check for float value
 	{
-		echo "false is of type boolean\n";
+		echo "$thing is of type float\n";
 	}
-}
-elseif (is_array($thing))  //check for array value
-{
-	echo "array(";
-	foreach ($thing as $subthing) 
+	elseif (is_bool($thing))  //check for boolean value
 	{
-		echo " " . $subthing;
+		if ($thing) 
+		{
+			echo "true is of type boolean\n";
+		}
+		else
+		{
+			echo "false is of type boolean\n";
+		}
 	}
-	echo ") is of type array\n";
-}
-elseif (is_null($thing))  //check for null value
-{
-	echo "null is of type null\n";
-}
-elseif (is_string($thing))  //check for string value
-{
-	echo "$thing is of type string\n";
-}
+	elseif (is_array($thing))  //check for array value
+	{
+		echo "array(";
+		foreach ($thing as $subthing) 
+		{
+			echo " " . $subthing;
+		}
+		echo ") is of type array\n";
+	}
+	elseif (is_null($thing))  //check for null value
+	{
+		echo "null is of type null\n";
+	}
+	elseif (is_string($thing))  //check for string value
+	{
+		echo "$thing is of type string\n";
+	}
+
+	}
 
 }
-
