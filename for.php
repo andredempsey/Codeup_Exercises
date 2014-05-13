@@ -80,11 +80,6 @@ function CheckIncrementer($arg, $commandline, $file)
 		$arg = $arg != 0 ? $arg : 1;
 		return (int) $arg;
 	} 
-	elseif ($commandline) 
-	{
-		echo "Usage:  With command line arguments => \n php {$file} -cl [start as integer] [end as integer] [incrementer as integer] \n\n	Without command line arguments => \n php {$file}\n";
-		exit(1);
-	}
 	else 
 	{
 		//default incrementer to 1 if no value or invalid value
