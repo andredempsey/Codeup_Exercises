@@ -10,50 +10,24 @@
 
 //read in array
 $things = array('Sgt. Pepper', "11", null, array(1,2,3), 3.14, "12 + 7", false, (string) 11);
-//iterate through each value and output only those values with a type of scalar
+//iterate through each value and echo out every value, including those nested in arrays
 foreach ($things as  $thing) 
 {
-
-if (is_scalar($thing))  //first check if it is a scalar
-{
 	
-	if (is_integer($thing))  //check for integer value
+	
+	if (is_array($thing))  //check for array value
 	{
-		echo "$thing is of type integer\n";
-	}
-	elseif (is_float($thing))  //check for float value
-	{
-		echo "$thing is of type float\n";
-	}
-	elseif (is_bool($thing))  //check for boolean value
-	{
-		if ($thing) 
-		{
-			echo "true is of type boolean\n";
-		}
-		else
-		{
-			echo "false is of type boolean\n";
-		}
-	}
-	elseif (is_array($thing))  //check for array value
-	{
-		echo "array(";
+		echo "Array(";
 		foreach ($thing as $subthing) 
 		{
-			echo " " . $subthing;
+			echo "{$subthing} ";
 		}
-		echo ") is of type array\n";
+		echo ") or {using IMPLODE} ";
+		$altsubthing = implode(",", $thing);
+		echo "Array({$altsubthing})\n"; 
 	}
-	elseif (is_null($thing))  //check for null value
+	else
 	{
-		echo "null is of type null\n";
+		echo "{$thing}\n";
 	}
-	elseif (is_string($thing))  //check for string value
-	{
-		echo "$thing is of type string\n";
-	}
-
-	}
-
 }
