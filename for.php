@@ -19,8 +19,14 @@ fwrite(STDOUT, 'Please enter the ending number for the series => ');
 // Get the input from user
 $end=(int)fgets(STDIN);
 
+// Prompt user for incrementer
+fwrite(STDOUT, 'Please enter the incrementer for the series => ');
+  
+// Get the input from user
+$incrementer=(int)fgets(STDIN);
+
 //loop through the numbers
-for ($i = $start; $i <= $end; $i++) 
+for ($i = $start; $i <= $end; $i+=$incrementer) 
 { 
 	fwrite(STDOUT, "{$i}\n");	
 }
