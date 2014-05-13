@@ -7,7 +7,7 @@
 //Name:  Andre Dempsey
 //Codeup Baddies
 
-if ($argc>=4 && $argv[1]=="-cl") //verify there are sufficient arguments AND correct switch; filename switch start stop 
+if ($argc>=5 && $argv[1]=="-cl") //verify there are sufficient arguments AND correct switch; filename switch start stop 
 {
 	$start = CheckInput($argv[2], True, $argv[0]);
 	$end = CheckInput($argv[3], True, $argv[0]);
