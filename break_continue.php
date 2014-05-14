@@ -1,20 +1,20 @@
 <?php
 
-//This is the continue exercise for 
+//This is the break exercise for 
 //Control Structures II
 //Page: 4 of 5
 //Date:  14 May 14
 //Name:  Andre Dempsey
 //Codeup Baddies
 
-//loop through numbers from 1 to 100 and echo even numbers
-//use the continue command
+//loop through numbers from 1 to 100 and echo numbers but stop after 10
+//use the break command
 
 for ($i=1; $i<=100; $i++) 
 { 
-	if ($i%2!=0) 
+	if ($i>10) 
 	{
-		continue;
+		break;
 	}
-		echo "$i\n";
+	echo "$i\n";
 }
