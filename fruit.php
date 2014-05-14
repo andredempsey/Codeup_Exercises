@@ -1,7 +1,7 @@
 <?php
 
 //Fruits Assignment 
-//iterate array using for loop
+//iterate array using foreach loop
 //Date:  13 May 14
 //Name:  Andre Dempsey
 //Codeup Baddies
@@ -9,7 +9,7 @@
 
 $fruits = ["apple", "banana", "orange", "pear", "kiwi", "grapes"];
 
-for ($i=0;$i<count($fruits); $i++) 
+foreach ($fruits as $fruit) 
 {
-    echo "{$fruits[$i]}\n";    
+        echo "{$fruit}\n";    
 }
