@@ -14,7 +14,12 @@ date_default_timezone_set('America/Chicago');
 // 1 (for Monday) through 7 (for Sunday)
 $day_of_week = date('N');
 
-switch($day_of_week) {
+echo date('l jS \of F Y h:i:s A');
+echo "\n\n";
+echo "Output from switch logic =>\n";
+
+switch($day_of_week) 
+{
     case 1:
         echo "Monday\n";
         break;
@@ -37,4 +42,37 @@ switch($day_of_week) {
         echo "Sunday\n";
         break;
     
+}
+echo "\n\n";
+echo "Output from if and elseif logic =>\n";
+
+//add if and elseif statements to verify output
+
+if ($day_of_week==1) 
+{
+	echo "Monday\n";
+}
+elseif ($day_of_week==2) 
+{
+	echo "Tuesday\n";
+}
+elseif ($day_of_week==3) 
+{
+	echo "Wednesday\n";
+}
+elseif ($day_of_week==4) 
+{
+	echo "Thursday\n";
+}
+elseif ($day_of_week==5) 
+{
+	echo "Friday\n";
+}
+elseif ($day_of_week==6) 
+{
+	echo "Saturday\n";
+}
+else
+{
+	echo "Sunday\n";
 }
