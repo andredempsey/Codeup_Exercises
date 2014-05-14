@@ -72,7 +72,7 @@ elseif ($day_of_week==6)
 {
 	echo "Saturday\n";
 }
-else
+elseif ($day_of_week==7) 
 {
 	echo "Sunday\n";
 }
