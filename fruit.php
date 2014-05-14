@@ -1,7 +1,7 @@
 <?php
 
 //Fruits Assignment 
-//iterate array using foreach loop
+//iterate array using foreach loop and show color of fruit
 //Date:  13 May 14
 //Name:  Andre Dempsey
 //Codeup Baddies
