@@ -35,16 +35,29 @@ $books = array(
 //Have it output the book's title, 
 //then list the key value pairs for the data about each book.
 
-foreach ($books as $key => $book) 
+// foreach ($books as $key => $book) 
+// {
+//      if ((int)$book['published'] > 1950) //check published date and only show after 1950
+//     {
+//         echo "Book title = {$key}\n"; 
+//         foreach ($book as $keyitems => $bookdata) 
+//         {
+//             echo "\t{$keyitems} = {$bookdata}\n";
+//         }
+//     echo "\n";
+//     }
+// }
+
+
+foreach ($books as $book => $properties) 
 {
-     if ((int)$book['published'] > 1950) //check published date and only show after 1950
+    if ((int)$properties['published'] > 1950) //check published date and only show after 1950
     {
-        echo "Book title = {$key}\n"; 
-        foreach ($book as $keyitems => $bookdata) 
+        echo "Book title = {$book}\n"; 
+        foreach ($properties as $property => $value) 
         {
-            echo "\t{$keyitems} = {$bookdata}\n";
+            echo "\t{$property} = {$value}\n";
         }
     echo "\n";
     }
 }
-
