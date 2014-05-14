@@ -7,9 +7,16 @@
 //Codeup Baddies
 
 
-$fruits = ["apple", "banana", "orange", "pear", "kiwi", "grapes"];
+$fruits = [
+    ["type"=>"Apples","color"=>"red"],
+    ["type"=>"Bananas","color"=>"yellow"],
+    ["type"=>"Oranges","color"=>"orange"],
+    ["type"=>"Pears", "color"=>"green"],
+    ["type"=>"Kiwis", "color"=>"green"],
+    ["type"=>"Grapes","color"=>"purple"]];
 
-foreach ($fruits as $fruit) 
+foreach ($fruits as $key =>$fruit) 
 {
-        echo "{$fruit}\n";    
+        echo "{$fruit['type']} are {$fruit['color']}.\n";
+
 }
