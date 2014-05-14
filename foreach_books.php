@@ -37,11 +37,14 @@ $books = array(
 
 foreach ($books as $key => $book) 
 {
-    echo "Book title = {$key}\n"; 
-    foreach ($book as $keyitems => $bookdata) 
+     if ((int)$book['published'] > 1950) //check published date and only show after 1950
     {
-        echo "\t{$keyitems} = {$bookdata}\n";
+        echo "Book title = {$key}\n"; 
+        foreach ($book as $keyitems => $bookdata) 
+        {
+            echo "\t{$keyitems} = {$bookdata}\n";
+        }
+    echo "\n";
     }
-echo "\n";
 }
 
