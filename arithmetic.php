@@ -2,7 +2,7 @@
 
 //This is the exercise for 
 //Functions I
-//Page: 2 of 5
+//Page: 3 of 5
 //Date:  15 May 14
 //Name:  Andre Dempsey
 //Codeup Baddies
@@ -12,20 +12,22 @@
 //3. Make the error messages show the values of the arguments.
 //4. Refactor the error messages into their own function, have the other functions use it for error messaging.
 
+//1. Refactor each function to return the result, removing the echo.
+
+
 function add($a, $b) 
 {
 	if (is_numeric($a) && is_numeric($b)) //check to ensure variables are numeric
  	{
     	if ($b!=0) 
     	{
-       		echo $a + $b;
+       		return $a + $b;
     	} 
     }
     else
  	{
  		ErrorCheck($a,$b,false);
- 	}
- 	echo PHP_EOL;	
+ 	}	
 }
 
 function subtract($a, $b) 
@@ -34,14 +36,13 @@ function subtract($a, $b)
  	{
     	if ($b!=0) 
     	{
-       		echo $a - $b;
+       		return $a - $b;
     	} 
     }
     else
  	{
  		ErrorCheck($a,$b,false);
- 	}
- 	echo PHP_EOL;	
+ 	}	
 }
 
 function multiply($a, $b) 
@@ -50,14 +51,13 @@ function multiply($a, $b)
  	{
     	if ($b!=0) 
     	{
-       		echo $a * $b;
+       		return $a * $b;
     	} 
     }
     else
  	{
  		ErrorCheck($a,$b,false);
- 	}
- 	echo PHP_EOL;	
+ 	}	
 }
 
 function divide($a, $b) 
@@ -70,14 +70,13 @@ function divide($a, $b)
  	{
     	if ($b!=0) 
     	{
-       		echo $a / $b;
+       		return $a / $b;
     	} 
     }
     else
  	{
  		ErrorCheck($a,$b,false);
- 	}
- 	echo PHP_EOL;	
+ 	}	
 }
 function modulus($a, $b) 
 {
@@ -89,14 +88,13 @@ function modulus($a, $b)
  	{
     	if ($b!=0) 
     	{
-       		echo $a % $b;
+       		return $a % $b;
     	} 
     }
     else
  	{
  		ErrorCheck($a,$b,false);
- 	}
- 	echo PHP_EOL;	
+ 	}	
 }
 
 function ErrorCheck($a,$b,$dividebyzero=false)
@@ -145,27 +143,32 @@ switch ($argv[1])
 {
 	case '-a':
 		echo "Add $argv[2] and $argv[3] to get\n";
-		add($argv[2], $argv[3]);
+		echo add($argv[2], $argv[3]);
+		echo PHP_EOL;
 		break;
 	
 	case '-s':
 		echo "Subtract $argv[2] and $argv[3] to get\n";
-		subtract($argv[2], $argv[3]);
+		echo subtract($argv[2], $argv[3]);
+		echo PHP_EOL;
 		break;
 
 	case '-m':
 		echo "Multiply $argv[2] and $argv[3] to get\n";
-		multiply($argv[2], $argv[3]);
+		echo multiply($argv[2], $argv[3]);
+		echo PHP_EOL;
 		break;
 
 	case '-d':
 		echo "Divide $argv[2] and $argv[3] to get\n";
-		divide($argv[2], $argv[3]);
+		echo divide($argv[2], $argv[3]);
+		echo PHP_EOL;
 		break;
 
 	case '-md':
 		echo "Modulus $argv[2] and $argv[3] to get\n";
-		modulus($argv[2], $argv[3]);
+		echo modulus($argv[2], $argv[3]);
+		echo PHP_EOL;
 		break;
 }
 
