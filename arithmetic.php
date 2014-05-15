@@ -18,8 +18,7 @@ function add($a, $b)
  	{
     	if ($b!=0) //check for zero value before dividing to trap error
     	{
-    		echo "$a"." + "."$b"." = ";
-    		echo $a + $b;
+       		echo $a + $b;
     	} 
     }
     else
@@ -35,8 +34,7 @@ function subtract($a, $b)
  	{
     	if ($b!=0) //check for zero value before dividing to trap error
     	{
-    		echo "$a"." - "."$b"." = ";
-    		echo $a - $b;
+       		echo $a - $b;
     	} 
     }
     else
@@ -52,8 +50,7 @@ function multiply($a, $b)
  	{
     	if ($b!=0) //check for zero value before dividing to trap error
     	{
-    		echo "$a"." * "."$b"." = ";
-    		echo $a * $b;
+       		echo $a * $b;
     	} 
     }
     else
@@ -73,8 +70,7 @@ function divide($a, $b)
  	{
     	if ($b!=0) //check for zero value before dividing to trap error
     	{
-    		echo "$a"." / "."$b"." = ";
-    		echo $a / $b;
+       		echo $a / $b;
     	} 
     }
     else
@@ -93,8 +89,7 @@ function modulus($a, $b)
  	{
     	if ($b!=0) //check for zero value before dividing to trap error
     	{
-    		echo "$a"." mod "."$b"." = ";
-    		echo $a % $b;
+       		echo $a % $b;
     	} 
     }
     else
@@ -137,14 +132,51 @@ function ErrorCheck($a,$b,$dividebyzero=false)
 }
 //test the functions
 
-echo "add" . PHP_EOL;
-add(54,2);
-echo "substract" . PHP_EOL;
-subtract(54,2);
-echo "modulus" .PHP_EOL;
-modulus(20,2);
-echo "multiply" . PHP_EOL;
-multiply(5,2);
-echo "divide" . PHP_EOL;
-divide(30,10);
+if ($argc<4) 
+{
+	echo "Please enter test values using the following format\n";
+	echo "php arithmetic.php {[-a] or [-s] or [-m] or [-d] or [-md]} {value1} {value2}\n";
+
+	exit (1);
+}
+
+switch ($argv[1]) 
+
+{
+	case '-a':
+		echo "Add $argv[2] and $argv[3] to get\n";
+		add($argv[2], $argv[3]);
+		break;
+	
+	case '-s':
+		echo "Subtract $argv[2] and $argv[3] to get\n";
+		subtract($argv[2], $argv[3]);
+		break;
+
+	case '-m':
+		echo "Multiply $argv[2] and $argv[3] to get\n";
+		multiply($argv[2], $argv[3]);
+		break;
+
+	case '-d':
+		echo "Divide $argv[2] and $argv[3] to get\n";
+		divide($argv[2], $argv[3]);
+		break;
+
+	case '-md':
+		echo "Modulus $argv[2] and $argv[3] to get\n";
+		modulus($argv[2], $argv[3]);
+		break;
+}
+
+// echo "add" . PHP_EOL;
+// add(54,2);
+// echo "subtract" . PHP_EOL;
+// subtract(54,2);
+// echo "modulus" .PHP_EOL;
+// modulus(20,2);
+// echo "multiply" . PHP_EOL;
+// multiply(5,2);
+// echo "divide" . PHP_EOL;
+// divide(30,10);
 
