@@ -27,10 +27,16 @@ function divide($a, $b)
     echo $a / $b. PHP_EOL;
 }
 
+function modulus($a, $b) 
+{
+    echo $a % $b. PHP_EOL;
+}
+
 //test the functions
 
 add(20,2);
 subtract(20,2);
 multiply(20,2);
 divide(20,2);
+modulus(1,2);
 
