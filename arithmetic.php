@@ -16,7 +16,7 @@ function add($a, $b)
 {
 	if (is_numeric($a) && is_numeric($b)) //check to ensure variables are numeric
  	{
-    	if ($b!=0) //check for zero value before dividing to trap error
+    	if ($b!=0) 
     	{
        		echo $a + $b;
     	} 
@@ -32,7 +32,7 @@ function subtract($a, $b)
 {
 	if (is_numeric($a) && is_numeric($b)) //check to ensure variables are numeric
  	{
-    	if ($b!=0) //check for zero value before dividing to trap error
+    	if ($b!=0) 
     	{
        		echo $a - $b;
     	} 
@@ -48,7 +48,7 @@ function multiply($a, $b)
 {
 	if (is_numeric($a) && is_numeric($b)) //check to ensure variables are numeric
  	{
-    	if ($b!=0) //check for zero value before dividing to trap error
+    	if ($b!=0) 
     	{
        		echo $a * $b;
     	} 
@@ -68,7 +68,7 @@ function divide($a, $b)
  	}
  	if (is_numeric($a) && is_numeric($b)) //check to ensure variables are numeric
  	{
-    	if ($b!=0) //check for zero value before dividing to trap error
+    	if ($b!=0) 
     	{
        		echo $a / $b;
     	} 
@@ -87,7 +87,7 @@ function modulus($a, $b)
  	}
  	if (is_numeric($a) && is_numeric($b)) //check to ensure variables are numeric
  	{
-    	if ($b!=0) //check for zero value before dividing to trap error
+    	if ($b!=0) 
     	{
        		echo $a % $b;
     	} 
