@@ -13,6 +13,7 @@
 //4. Refactor the error messages into their own function, have the other functions use it for error messaging.
 
 //1. Refactor each function to return the result, removing the echo.
+//2. Validate divide by 0 errors, return FALSE if divide by 0 is attempted.
 
 
 function add($a, $b) 
@@ -64,7 +65,8 @@ function divide($a, $b)
 {
 	if ($b==0) 
  	{
- 		ErrorCheck($a,$b,true);
+ 		// ErrorCheck($a,$b,true);
+ 		return false;
  	}
  	if (is_numeric($a) && is_numeric($b)) //check to ensure variables are numeric
  	{
@@ -75,14 +77,16 @@ function divide($a, $b)
     }
     else
  	{
- 		ErrorCheck($a,$b,false);
+ 		// ErrorCheck($a,$b,false);
+ 		return false;
  	}	
 }
 function modulus($a, $b) 
 {
 	if ($b==0) 
  	{
- 		ErrorCheck($a,$b,true);
+ 		// ErrorCheck($a,$b,true);
+ 		return false;
  	}
  	if (is_numeric($a) && is_numeric($b)) //check to ensure variables are numeric
  	{
@@ -93,7 +97,8 @@ function modulus($a, $b)
     }
     else
  	{
- 		ErrorCheck($a,$b,false);
+ 		// ErrorCheck($a,$b,false);
+ 		return false;
  	}	
 }
 
@@ -161,13 +166,27 @@ switch ($argv[1])
 
 	case '-d':
 		echo "Divide $argv[2] and $argv[3] to get\n";
-		echo divide($argv[2], $argv[3]);
+		if (divide($argv[2], $argv[3])!=False) 
+		{
+			echo divide($argv[2], $argv[3]);
+		}
+		else
+		{
+			var_dump(divide($argv[2], $argv[3]));
+		}
 		echo PHP_EOL;
 		break;
 
 	case '-md':
 		echo "Modulus $argv[2] and $argv[3] to get\n";
-		echo modulus($argv[2], $argv[3]);
+		if (modulus($argv[2], $argv[3])!=False) 
+		{
+			echo modulus($argv[2], $argv[3]);
+		}
+		else
+		{
+			var_dump(modulus($argv[2], $argv[3]));
+		}
 		echo PHP_EOL;
 		break;
 }
