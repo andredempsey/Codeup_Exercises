@@ -45,7 +45,7 @@ $matches=0;
 $matchingvalues='';
 	foreach ($array1 as $key => $value) 
 	{
-		if (array_search($value, $array2)!==FALSE) 
+		if (findname($value, $array2)==="TRUE") 
 		{
 			$matchingvalues.=$value. " ";	
 			$matches++;
