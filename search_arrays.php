@@ -17,14 +17,16 @@ $compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
 
 function findname($searchstring,$targetarray)
 {
-	if (array_search($searchstring,$targetarray)!== FALSE) 
-	{	
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	// if (array_search($searchstring,$targetarray)!== FALSE) 
+	// {	
+	// 	return true;
+	// }
+	// else
+	// {
+	// 	return false;
+	// }
+	// 
+	return array_search($searchstring, $targetarray)!==false;
 }
 
 //find 'Tina' in $names array
@@ -45,7 +47,7 @@ $matches=0;
 $matchingvalues='';
 	foreach ($array1 as $key => $value) 
 	{
-		if (findname($value, $array2)===TRUE) 
+		if (findname($value, $array2)) 
 		{
 			$matchingvalues.=$value. " ";	
 			$matches++;
@@ -58,7 +60,7 @@ $matchingvalues='';
 	}
 	else
 	{
-	return $matches;
+		return $matches;
 	}
 }
 
