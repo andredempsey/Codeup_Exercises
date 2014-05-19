@@ -19,20 +19,20 @@ function findname($searchstring,$targetarray)
 {
 	if (array_search($searchstring,$targetarray)!== FALSE) 
 	{	
-		return "TRUE";
+		return true;
 	}
 	else
 	{
-		return "FALSE";
+		return false;
 	}
 }
 
 //find 'Tina' in $names array
-echo findname("Tina",$names);
+var_dump(findname("Tina",$names));
 echo PHP_EOL;
 
 //find 'Bob' in $names array
-echo findname("Bob",$names);
+var_dump( findname("Bob",$names));
 echo PHP_EOL;
 
 
@@ -45,7 +45,7 @@ $matches=0;
 $matchingvalues='';
 	foreach ($array1 as $key => $value) 
 	{
-		if (findname($value, $array2)==="TRUE") 
+		if (findname($value, $array2)===TRUE) 
 		{
 			$matchingvalues.=$value. " ";	
 			$matches++;
