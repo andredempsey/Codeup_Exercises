@@ -11,11 +11,14 @@
 //1.  convert our $physicists_array into a human friendly $famous_fake_physicists string.
 //2.  Turn your solution into a function named humanized_list(). 
 //You should be able to pass the $physicists_array as the only argument, and your function will return the result array as a string
+//3. Update your code to list the physicists by first name, in alphabetical order.
 
 $physicists_string = 'Gordon Freeman, Samantha Carter, Sheldon Cooper, Quinn Mallory, Bruce Banner, Tony Stark';
 
 function humanized_list($physicists_array)
 {
+	//sort items alphabetically
+	sort($physicists_array, SORT_NATURAL|SORT_FLAG_CASE);
 	//retrieve last item
 	$last_item=array_pop($physicists_array);
 
