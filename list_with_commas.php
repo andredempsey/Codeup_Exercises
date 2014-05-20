@@ -12,13 +12,17 @@
 //2.  Turn your solution into a function named humanized_list(). 
 //You should be able to pass the $physicists_array as the only argument, and your function will return the result array as a string
 //3. Update your code to list the physicists by first name, in alphabetical order.
+//4.  Default alphabetical sorting to false. If no args are passed, no sorting takes place.
 
 $physicists_string = 'Gordon Freeman, Samantha Carter, Sheldon Cooper, Quinn Mallory, Bruce Banner, Tony Stark';
 
-function humanized_list($physicists_array)
+function humanized_list($physicists_array, $sort=FALSE)
 {
-	//sort items alphabetically
-	sort($physicists_array, SORT_NATURAL|SORT_FLAG_CASE);
+	if ($sort) 
+	{
+		//sort items alphabetically
+		sort($physicists_array, SORT_NATURAL|SORT_FLAG_CASE);
+	}
 	//retrieve last item
 	$last_item=array_pop($physicists_array);
 
@@ -41,4 +45,9 @@ $famous_fake_physicists = humanized_list($physicists_array);
 echo "Some of the most famous fictional theoretical physicists are {$famous_fake_physicists}.";
 echo PHP_EOL;
 
+$famous_fake_physicists = humanized_list($physicists_array, true);
+
+//output result
+echo "Some of the most famous fictional theoretical physicists are {$famous_fake_physicists}.";
+echo PHP_EOL;
 
