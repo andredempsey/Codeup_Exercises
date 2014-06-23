@@ -10,16 +10,16 @@ $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 echo $dbc->getAttribute(PDO::ATTR_CONNECTION_STATUS) . "\n";
 
 // Create the query and assign to var
-// $query = 'CREATE TABLE national_parks (
-//     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-//     name VARCHAR(50) NOT NULL,
-//     location VARCHAR(240) NOT NULL,
-//     date_established DATE NOT NULL,
-//     area_in_acres DECIMAL NOT NULL,
-//     PRIMARY KEY (id)
-// )';
+$query = 'CREATE TABLE national_parks (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    location VARCHAR(240) NOT NULL,
+    date_established DATE NOT NULL,
+    area_in_acres DOUBLE NOT NULL,
+    PRIMARY KEY (id)
+)';
 
-// $dbc->exec($query);
+$dbc->exec($query);
 
 $parks = [
     ['name'=>'Acadia', 'location'=>'Maine', 'date_established'=>'February 26, 1919', 'area_in_acres'=>47389.67 ],
