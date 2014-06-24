@@ -43,7 +43,6 @@ foreach ($parks as $park)
     $stmt->bindValue(':name', $park['name'], PDO::PARAM_STR);
     $stmt->bindValue(':location',  $park['location'],  PDO::PARAM_STR);
     $stmt->bindValue(':date_est', $park['date_established'], PDO::PARAM_STR);
-    $stmt->bindValue(':location',  $park['name'],  PDO::PARAM_STR);
     $stmt->bindValue(':acres', $park['area_in_acres'], PDO::PARAM_STR);
     $stmt->bindValue(':desc',  $park['description'],  PDO::PARAM_STR);
 
